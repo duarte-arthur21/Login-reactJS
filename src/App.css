@@ -1,0 +1,164 @@
+.App {
+  background: #E5E5E5;;
+}
+
+.EsqueciSenha {
+  position: absolute;
+  width: 114px;
+  height: 24px;
+  left: 1094px;
+  top: 695px;
+
+  /* Body 1 - regular 16 (24, 0.1px) */
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  /* identical to box height, or 150% */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.2px;
+
+  /* Neutral / Gray dark */
+  color: #52575C;
+}
+
+.Entrar {
+  font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    /* identical to box height, or 130% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.2px;
+
+    /* Primary / Lightest */
+    color: #EBF0FF;
+}
+
+.email{
+  position: absolute;
+width: 50px;
+height: 27.27px;
+left: 1020px;
+top: 374.37px;
+
+/* H6 - regular 18 (24, 0.1px) */
+
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 24px;
+/* or 133% */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.1px;
+
+/* Neutral / Gray light */
+
+color: #CACCCF;
+}
+
+.senha{
+  position: absolute;
+  width: 49px;
+  height: 27.27px;
+  left: 1021px;
+  top: 446px;
+
+  /* H6 - regular 18 (24, 0.1px) */
+
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  /* or 133% */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1px;
+
+  /* Neutral / Gray light */
+
+  color: #CACCCF;
+
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.perfil {
+  width: 20%;
+  height: 20%;
+  border-radius: 400px;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-bottom: 5%;
+}
+
+.Feed{
+  margin-left: 8% !important;
+}
+
+#Contatos{
+ justify-content: left;
+  margin-left: 5% !important;
+  margin-right: 5% !important;
+ line-height: 25px;
+}
+
+#Contatos p {
+  margin-bottom: 5%;
+}
+
+#Contatos img {
+  width: 100%;
+}
+
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
