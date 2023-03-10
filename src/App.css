@@ -1,97 +1,74 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 .App {
   background: #E5E5E5;;
 }
 
+.Left{
+  justify-content: left;
+}
+
+.Right{
+  justify-content: center;
+}
+
 .EsqueciSenha {
-  position: absolute;
   width: 114px;
   height: 24px;
-  left: 1094px;
-  top: 695px;
 
-  /* Body 1 - regular 16 (24, 0.1px) */
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
 
-  /* identical to box height, or 150% */
-  display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: 0.2px;
 
-  /* Neutral / Gray dark */
   color: #52575C;
 }
 
-.Entrar {
-  font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 26px;
-    /* identical to box height, or 130% */
 
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.2px;
-
-    /* Primary / Lightest */
-    color: #EBF0FF;
-}
-
-.email{
+.submit {
   position: absolute;
-width: 50px;
-height: 27.27px;
-left: 1020px;
-top: 374.37px;
+  width: 385px;
+  height: 50px;
+  left: 959px;
+  top: 519px;
 
-/* H6 - regular 18 (24, 0.1px) */
-
-font-family: 'Lato';
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 24px;
-/* or 133% */
-
-display: flex;
-align-items: center;
-letter-spacing: 0.1px;
-
-/* Neutral / Gray light */
-
-color: #CACCCF;
-}
-
-.senha{
-  position: absolute;
-  width: 49px;
-  height: 27.27px;
-  left: 1021px;
-  top: 446px;
-
-  /* H6 - regular 18 (24, 0.1px) */
+  background: #1F58E7;
+  border-radius: 100px;
 
   font-family: 'Lato';
   font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-  /* or 133% */
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#healthCare{
+  width: 286px;
+  height: 70px;
+
+  /* H1 - bold 56 (70, 0.4px) */
+
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 70px;
+  /* identical to box height, or 125% */
 
   display: flex;
   align-items: center;
-  letter-spacing: 0.1px;
+  letter-spacing: 0.4px;
 
-  /* Neutral / Gray light */
+  /* Primary / Lightest */
 
-  color: #CACCCF;
-
+  color: #EBF0FF;
 }
 
 .logo {

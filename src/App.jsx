@@ -1,46 +1,73 @@
 import './App.css'
-import { Login } from './components/Login.style'
-import { Group3 } from './components/Group3.style.'
-import { Titulo } from './components/Titulo.style'
-import { Text } from './components/Text.style'
-import { Button } from './components/Button.style'
-import { HealthCare } from './components/HealthCare.style'
-import { Subtitulo } from './components/Subtitulo.style'
-import { Form } from './components/Form.style'
-import { InputSenha } from './components/InputSenha.style'
-import { InputEmail } from './components/InputEmail.style'
-import { RightSide } from './components/RightSide.style'
-import { Entrar } from './components/Entrar.style'
-import { Cadastrar } from './components/Cadastrar.style'
-import {Input} from './components/Input.style'
+import React, {useState} from 'react';
 
+import { Wrapper } from './components/Wrapper.style'
+import { SaibaMais, Cadastrar, Entrar } from './components/Button/styles'
+import { Text, Titulo, Subtitulo } from './components/Text/styles';
+import { Form } from './components/Form/Form.style'
+import { RightSide } from './components/RightSide.style'
+import { Input} from './components/Input/styles'
+import { LeftSide } from './components/LeftSide.style';
+import { schema } from './components/Form/schema';
 
 function App() {
 
+  const LoginForm = () => {    
+    if(email == ''){
+      alert('Preencha o campo e-mail!')
+      return false}
+
+    if (senha == ''){
+      alert('Preencha o campo de senha')
+      return false
+    }
+    return true    
+  }
+
+ const [email, setEmail] = useState('')
+ const [senha, setSenha] = useState('')
+
   return (
-    <Login>
-        <HealthCare>HealthCare</HealthCare>
-        <Subtitulo>Consultas marcadas com agilidade e Segurança!</Subtitulo>
+    <Wrapper>
+      <LeftSide>
+        <div className='Left'>
+            <h1 id='healthCare'>HealthCare</h1>
+            <Subtitulo>Consultas marcadas com agilidade e Segurança!</Subtitulo>
 
-            <Button>Saiba mais!</Button>
+            <SaibaMais>Saiba Mais!</SaibaMais>
+        </div>
+      </LeftSide>
 
-            <RightSide></RightSide>
-
-            <Group3>
+      <RightSide>
+        <div className="Right">
                   <Titulo>Olá,</Titulo>
                   <Text>Entre com sua conta</Text>
-            </Group3>
 
-            <Form>
-                <InputEmail className='email' type="email" name="name" placeholder='Email' />
-                <InputSenha className='senha' type="password" name="name" placeholder='Senha' />
+            <Form >
+                <Input placeholder='Email'
+                       type="email"
+                       name='username'
+                       value={email} 
+                       onChange={(e)=> {setEmail(e.target.value)}}
+                       />
 
-                <Entrar className='Entrar'>Entrar</Entrar>
+                <Input placeholder='Senha'
+                       type='password' 
+                       name='password'
+                       value={senha} 
+                       onChange={(e)=> {setSenha(e.target.value)}}
+                       />
 
-                <Cadastrar>Cadastrar</Cadastrar>
+                <Entrar onClick={LoginForm}>Entrar</Entrar>
+
+                <Cadastrar>Cadastar</Cadastrar>
                 <p className="EsqueciSenha">Esqueci a senha</p>
             </Form>
-    </Login>
+      </div>
+
+
+      </RightSide>
+    </Wrapper>
   )
 }
 
