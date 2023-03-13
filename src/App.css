@@ -15,9 +15,6 @@
 }
 
 .EsqueciSenha {
-  width: 114px;
-  height: 24px;
-
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
@@ -30,7 +27,6 @@
 
   color: #52575C;
 }
-
 
 .submit {
   position: absolute;

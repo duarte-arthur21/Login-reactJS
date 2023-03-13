@@ -1,0 +1,36 @@
+ const [email, setEmail] = useState('')
+ const [senha, setSenha] = useState('')
+
+const LoginForm = () => {
+    const handleSubmit = (e: any) => {
+      e.preventDefault()
+  
+      const submitData = {
+        username: e.target.username.value,
+        password: e.target.password.value,
+      }
+  
+      schema.isValid(submitData).then((res) => console.log(res))
+      console.log('submitData', submitData)
+    }
+  }
+
+ <Form onSubmit={handleSubmit}>
+                <Input placeholder='Email' 
+                      type="email" 
+                      name='username' 
+                      value={email} 
+                      onChange={(e)=> {setEmail(e.target.value)}} />
+
+                <Input placeholder='Senha' 
+                      type='password' 
+                      name='password' 
+                      value={senha}
+                      onChange={(e)=> {setSenha(e.target.value)}}
+                      />
+
+                <Entrar onClick={()=> {}} />
+
+                <Cadastrar/>
+                <p className="EsqueciSenha">Esqueci a senha</p>
+            </Form>

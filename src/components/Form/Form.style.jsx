@@ -6,4 +6,7 @@ export const Form = styled.form `
 
     justify-content: right;
     display: block;
+
+    margin-top: 30px;
+    
 `
