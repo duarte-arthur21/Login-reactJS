@@ -1,6 +1,18 @@
 import styled from "styled-components";
 
-export const RightSide = styled.div `
+const RightSide = (props) => {
+    const {children} = props
+
+    return(
+        <Wrapper>
+            {children}
+        </Wrapper>
+    )
+}
+
+export {RightSide}
+
+const Wrapper = styled.div `
     width: 40%;
     height: ${window.innerHeight}px;
 

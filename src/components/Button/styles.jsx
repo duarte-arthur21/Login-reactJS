@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { CadastrarButton, SaibaButton, EntrarButton } from ".";
 
-export const Cadastrar = styled.button`  
+export const ButtonDefault = styled.button`  
     font-family: 'Lato';
     font-style: normal;
     font-weight: 700;
@@ -18,7 +18,7 @@ export const Cadastrar = styled.button`
     margin-top: 45px;
 
 `
-export const Entrar = styled.button`
+export const Button = styled.button`
     font-family: 'Lato';
     font-style: normal;
     font-weight: 700;
