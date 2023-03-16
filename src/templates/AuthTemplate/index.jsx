@@ -8,13 +8,13 @@ import { LeftSide } from './LeftSide';
 import { RightSide } from './RightSide';
 
 function AuthTemplate() {
-  const [secaoAtual, setSecaoAtual] = useState('primeira');
+  const [secaoAtual, setSecaoAtual] = useState('login');
 
   const render = () => {
-    if (secaoAtual === 'primeira')
+    if (secaoAtual === 'login')
       return <Login mudaSecao={setSecaoAtual} />
 
-    if (secaoAtual === 'segunda')
+    if (secaoAtual === 'cadastro')
       return <Cadastro mudaSecao={setSecaoAtual} />
   };
 
@@ -30,7 +30,6 @@ function AuthTemplate() {
 }
 
 export {AuthTemplate}
-
 
 const Wrapper = styled.div `
     width: 100%;

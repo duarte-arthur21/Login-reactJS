@@ -1,16 +1,12 @@
 import React from 'react';
-//import { Form } from '../Form/Form.style';
-import { Input } from '../Input/styles';
+import { Input } from '../Input';
 import { Icon } from '../Image/Icon.style';
 import { Container } from '../Form/Container.style';
 import { Text } from '../Text/styles';
-import { ButtonDefault } from '../Button/styles';
-import '../../App.css'
-import { Button } from '../Button/styles';
-
 import { Form } from '@unform/web';
-import { useRef } from 'react';
-import { useField } from '@unform/core';
+import { useRef } from 'react'
+import * as Yup from 'yup'
+import {BtnDefault, BtnPrimary} from '../Button';
 
 
 const Cadastro = (props) => {
@@ -18,8 +14,18 @@ const Cadastro = (props) => {
   const formRef = useRef(null);
 
   function handleSubmit(data) {
-    console.log(data);
+    const submitdata = {username: data.username, email: data.email, password: data.password, repeat: data.repeatpassword}
+    console.log(submitdata);
+
+    schema.isValid(submitdata).then((Response) => {console.log(Response)})
   }
+
+  const schema = Yup.object({
+    email: Yup.string().email(),
+    username: Yup.string().min(10, 'error'),
+    password: Yup.string().min(4, 'error'),
+    repeatpassword: Yup.string().oneOf([Yup.ref('password'), null], 'error'),
+})
 
   return (
     <section>
@@ -43,12 +49,16 @@ const Cadastro = (props) => {
 
             <Container>
               <Icon src="/Lock.svg" alt="Senha logo"/>
-              <Input placeholder='Repeta a senha' type="password" name='newpassword'/>
+              <Input placeholder='Repeta a senha' type="password" name='repeatpassword'/>
             </Container>
 
-            <Button type='submit'>Registrar</Button>
+            <BtnPrimary 
+              title='Registrar'
+              type='submit'/>
       </Form>
-      <ButtonDefault onClick={() => mudaSecao('primeira')}>Voltar para login</ButtonDefault>
+      <BtnDefault 
+        title='Voltar para login'
+        onClick={() => mudaSecao('login')}/>
 
 
     </section>

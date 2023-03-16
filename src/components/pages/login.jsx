@@ -1,50 +1,55 @@
 import React from 'react';
-import { Titulo } from '../Text/styles';
-import { Text } from '../Text/styles';
-import { Form } from '../Form/Form.style';
+import { Titulo, Text } from '../Text/styles';
+import { Form } from '@unform/web';
 import { Container } from '../Form/Container.style';
 import { Icon } from '../Image/Icon.style';
-import { Input } from '../Input/styles';
-import { ButtonDefault, Button } from '../Button/styles';
-import { schema } from '../Form/schema';
-import '../../App.css'
+import { Input } from '../Input';
+import { object, string } from 'yup'
+import { useRef } from 'react'
+import { BtnBlock, BtnDefault, BtnPrimary} from '../Button';
 
 const Login = (props) => {
   const {mudaSecao} = props
+  const formRef = useRef(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = (data) => {
+    const submitdata = {email: data.email, password: data.password, }
+    console.log(submitdata);
 
-    const submitData = {
-      username: e.target.username.value,
-      password: e.target.password.value,
-    }
-
-    schema.isValid(submitData).then((res) => console.log(res))
-    console.log('submitData', submitData)
+    schema.isValid(submitdata).then((Response) => {console.log(Response)})
   }
+
+  const schema = object().shape({
+    email: string().email(),
+    password: string().min(4, 'error'),
+  })
 
 return (
         <section>
                 <Titulo>Olá,</Titulo>
                 <Text>Entre com sua conta</Text>
 
-                <Form onSubmit={handleSubmit}>
+                <Form ref={formRef} onSubmit={handleSubmit}>
                     <Container>
                       <Icon src="/Mail.svg" alt="Email logo"/>
-                      <Input placeholder='Email' type="email" name='username'/>
+                      <Input placeholder='Email' type="email" name='email'/>
                     </Container>
 
                     <Container>
-                        <Icon src="/Lock.svg" alt="Email logo"/>
+                        <Icon src="/Lock.svg" alt="Senha logo"/>
                         <Input placeholder='Senha' type='password' name='password'/>
                     </Container>
 
-                      <Button>Entrar</Button>
+                      <BtnPrimary 
+                        title='Entrar'
+                        type='submit' />
                 </Form>
 
-                <ButtonDefault onClick={() => mudaSecao('segunda')}>Cadastar</ButtonDefault>
-                <p className="EsqueciSenha">Esqueci a senha</p>
+                <BtnDefault 
+                  title="Cadastrar"
+                  onClick={() => mudaSecao('cadastro')}/>
+
+                <BtnBlock title="Esqueci minha Senha" />
         </section>
   )
 }

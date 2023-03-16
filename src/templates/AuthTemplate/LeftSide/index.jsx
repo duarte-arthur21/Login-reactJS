@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { SaibaMais } from "../../../components/Button/styles"
+import { BtnInfo } from "../../../components/Button"
 import { Subtitulo } from "../../../components/Text/styles"
 
 
@@ -9,7 +9,7 @@ const LeftSide = () => {
         <h1 id='healthCare'>HealthCare</h1>
         <Subtitulo>Consultas marcadas com agilidade e Segurança!</Subtitulo>
 
-        <SaibaMais>Saiba Mais!</SaibaMais>
+        <BtnInfo type='button' title='Saiba Mais!'/>
     </Wrapper>
     )
 }
