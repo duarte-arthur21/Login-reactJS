@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from "styled-components";
+import { Link, useLocation } from 'react-router-dom';
 
 const NavBar = (props) => {
     return(
@@ -7,9 +8,9 @@ const NavBar = (props) => {
         <Icon href="" >Dashboard</Icon>
 
         <Ul>
-            <CustomLink href="/dashboard"> Home </CustomLink>
-            <CustomLink href="/about"> Sobre </CustomLink>
-            <CustomLink href="/profile"> Perfil </CustomLink>
+            <CustomLink to="/dashboard"> Home </CustomLink>
+            <CustomLink to="/about"> Sobre </CustomLink>
+            <CustomLink to="/profile"> Perfil </CustomLink>
         </Ul>
     </Nav>
     );
@@ -17,11 +18,14 @@ const NavBar = (props) => {
 
 export {NavBar}
 
-const CustomLink = ({href, children, ...props}) => {
+const CustomLink = ({to, children, ...props}) => {
+   const currentPath = useLocation()
+   useEffect(() => {console.log('CurrentPath', currentPath)}, [currentPath])
+
     return (
-        <li>
-            <Section href={href} {...props}> {children} </Section>
-        </li>
+        <Li isActive={currentPath.pathname === to}>
+            <Section to={to} {...props}> {children} </Section>
+        </Li>
     );
 }
 
@@ -41,7 +45,7 @@ const Ul = styled.ul`
     gap: 0.5rem;
     list-style: none;
 `
-const Section = styled.a`
+const Section = styled(Link)`
     display: flex;
     position: relative;
     color: white;
@@ -57,11 +61,14 @@ const Section = styled.a`
         background-color: #777;
     }
 `
-const Icon = styled.a`
+const Icon = styled(Link)`
     color: inherit;
     text-decoration: none;
     height: '100%';
     display: flex;
     align-items: center;
     padding: 0.5rem;
+`
+const Li = styled.li`
+    background-color: ${props => props.isActive ? '#555' : 'transparent' };
 `
