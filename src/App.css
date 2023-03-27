@@ -14,20 +14,6 @@
   justify-content: center;
 }
 
-.EsqueciSenha {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.2px;
-
-  color: #52575C;
-}
-
 .submit {
   position: absolute;
   width: 385px;
@@ -43,28 +29,6 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
-}
-
-#healthCare{
-  width: 286px;
-  height: 70px;
-
-  /* H1 - bold 56 (70, 0.4px) */
-
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 56px;
-  line-height: 70px;
-  /* identical to box height, or 125% */
-
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.4px;
-
-  /* Primary / Lightest */
-
-  color: #EBF0FF;
 }
 
 .logo {

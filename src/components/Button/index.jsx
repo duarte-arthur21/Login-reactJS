@@ -1,9 +1,11 @@
 import React, { Children } from 'react';
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 export const BtnPrimary = (props) =>{
     return (
         <Primary 
+            href='/dashboard'
             onClick={props.onClick}
             type={props.type}>
             {props.title}
@@ -39,21 +41,18 @@ export const BtnBlock = (props) => {
       </Block>
   )
 }
-const Primary = styled.button`
+const Primary = styled.a`
+    display: block;
     font-family: 'Lato';
-    font-style: normal;
     font-weight: 700;
-    font-size: 17px;
-    line-height: 26px;
-    
-    width: 385px;
+    font-size: 24px;
+    text-decoration: none;
+    text-align: center;
     height: 50px;
-
     background: #1F58E7;
     border: 1px solid #CACCCF;
     color: #FFFFFF;
     border-radius: 100px;
-
     margin-top: 25px;
     margin-bottom: 7px;
 

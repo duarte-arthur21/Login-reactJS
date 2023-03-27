@@ -7,6 +7,7 @@ import { Input } from '../Input';
 import { object, string } from 'yup'
 import { useRef } from 'react'
 import { BtnBlock, BtnDefault, BtnPrimary} from '../Button';
+import { Link } from 'react-router-dom';
 
 const Login = (props) => {
   const {mudaSecao} = props
@@ -41,7 +42,8 @@ return (
                     </Container>
 
                       <BtnPrimary 
-                        title='Entrar'
+                        to='/dashboard'
+                        title='  Entrar  '
                         type='submit' />
                 </Form>
 

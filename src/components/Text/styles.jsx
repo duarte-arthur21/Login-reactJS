@@ -31,19 +31,3 @@ export const Titulo = styled.h2 `
 
     color: #25282B;
 `
-export const Subtitulo = styled.h2 `
-    width: 554px;
-    height: 34px;
-
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 34px;
-
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.2px;
-
-    color: #EBF0FF;
-`

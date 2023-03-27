@@ -15,7 +15,6 @@ export {RightSide}
 const Wrapper = styled.div `
     width: 40%;
     height: ${window.innerHeight}px;
-
     background: #FFFFFF;
     display: flex;
     justify-content: center;
