@@ -11,6 +11,8 @@ const NavBar = (props) => {
             <CustomLink to="/dashboard"> Home </CustomLink>
             <CustomLink to="/about"> Sobre </CustomLink>
             <CustomLink to="/profile"> Perfil </CustomLink>
+            <CustomLink to="/"> Sair </CustomLink>
+
         </Ul>
     </Nav>
     );

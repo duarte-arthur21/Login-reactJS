@@ -8,7 +8,7 @@ function Home() {
         <div className="">
             <NavBar/>
             
-            <Titulo>Hello World!</Titulo>
+            <Titulo>Hello World</Titulo>
             <Titulo>Você está na pagina Home</Titulo>
         </div>
     )

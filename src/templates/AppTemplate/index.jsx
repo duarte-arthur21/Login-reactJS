@@ -1,18 +1,70 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
 import { NavBar } from '../../components/NarBar';
+import { Table } from '../../components/Table'
 
-function Home() {
+ //{list.map(item) => {return JSON.stringify(item)}}
+
+const Home = () => {
+    const [list, setList] = useState([])
+
+    useEffect(() => {
+        getList()
+    }, [])
+
+    useEffect(() => {
+        console.log('list', list)
+    }, [list])
+
+    const getList = async () => { 
+        const responde = await fetch('http://localhost:3000/consultas')
+        const data = await responde.json()
+        setList(data)
+    }
+    
+    const columns = [
+        {
+          Header: 'ID',
+          accessor: 'id',
+        },
+        {
+          Header: 'Paciente',
+          accessor: 'paciente',
+        },
+        {
+          Header: 'Médico',
+          accessor: 'medico',
+        },
+        {
+          Header: 'Especialidade',
+          accessor: 'especialidade',
+        },
+        {
+          Header: 'Data',
+          accessor: 'data',
+        },
+        {
+          Header: 'Hora',
+          accessor: 'hora',
+        },
+        {
+          Header: 'Status',
+          accessor: 'status',
+        },
+      ]
+
+    
     return (
         <div className="">
             <NavBar/>
             
             <Titulo>Hello World!</Titulo>
-            <Titulo>Você está na pagina Inicial</Titulo>
+            <Table columns={columns} data={list} />
+
         </div>
     )
 }
-function About() {
+const About = () => {
     return (
         <div className="">
             <NavBar/>
@@ -21,7 +73,7 @@ function About() {
         </div>
     )
 }
-function Profile() {
+const Profile = () => {
     return (
         <div className="">
             <NavBar/>
