@@ -1,25 +1,24 @@
-import React from 'react';
-import { useState } from 'react'
+import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
-import { NavBar } from '../../components/NarBar';
+import { NavBar } from "../../components/NarBar";
 
-function profile() {
-    return (
-        <div className="">
-            <NavBar/>
-            
-            <Titulo>Hello World!</Titulo>
-            <Titulo>Você está na pagina Perfil</Titulo>
-        </div>
-    )
-}
+const profile = (props) => {
+  return (
+    <div className="">
+      <NavBar />
 
-export {profile}
+      <Titulo>Hello World!</Titulo>
+      <Titulo>Você está na pagina Perfil</Titulo>
+    </div>
+  );
+};
+
+export { profile };
 
 const Titulo = styled.h1`
-    position: relative;
-    align-items: center;
-    text-align: center;
-    color: #000;
-
-`
+  position: relative;
+  align-items: center;
+  text-align: center;
+  color: #000;
+`;

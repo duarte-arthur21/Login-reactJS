@@ -33,4 +33,4 @@ const LoginForm = () => {
 
                 <Cadastrar/>
                 <p className="EsqueciSenha">Esqueci a senha</p>
-            </Form>
+</Form>
