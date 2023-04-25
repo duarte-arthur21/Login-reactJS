@@ -179,33 +179,6 @@
       "data": "2021-11-20",
       "hora": "15:00",
       "status": "Marcada"
-    },
-    {
-      "paciente": "Arthur",
-      "medico": "João",
-      "especialidade": "Nutricionista",
-      "data": "2023-04-13",
-      "hora": "14:00",
-      "status": "Marcada",
-      "id": 21
-    },
-    {
-      "paciente": "",
-      "medico": "",
-      "especialidade": "",
-      "data": "",
-      "hora": "",
-      "status": "Marcada",
-      "id": 22
-    },
-    {
-      "paciente": "",
-      "medico": "",
-      "especialidade": "",
-      "data": "",
-      "hora": "",
-      "status": "Marcada",
-      "id": 23
     }
   ]
 }

@@ -21,6 +21,7 @@ const Edit = (props) => {
       hora: data.hora,
       status: "Marcada",
     };
+
     const response = await fetch(
       "http://localhost:3000/consultas/" + editingList.id,
       {

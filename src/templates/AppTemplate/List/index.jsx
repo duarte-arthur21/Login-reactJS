@@ -3,10 +3,25 @@ import { Table } from "../../../components/Table";
 import styled from "styled-components";
 import { BtnDefault, BtnInfo, BtnDanger } from "../../../components/Button";
 import { Modal } from "../../../components/Modal";
+import { FaRocket, FaEdit, FaTrash } from "react-icons/fa";
 
 const List = (props) => {
   const [list, setList] = useState([]);
   const [openModal, setOpenModal] = useState(false);
+  const [deleteRow, setDeleteRow] = useState();
+
+  const handleDelete = async () => {
+    fetch("http://localhost:3000/consultas/" + deleteRow.id, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (response.ok) {
+          getList();
+          toggleModal();
+        }
+      })
+      .catch((error) => console.error(error));
+  };
 
   useEffect(() => {
     getList();
@@ -27,24 +42,27 @@ const List = (props) => {
     const formatedData = data.map((row) => ({
       ...row,
       edit: (
-        <BtnInfo
+        <button
           type="button"
-          title="Editar"
           onClick={() => {
             props.setEditingList(row);
             props.setSection("edit");
           }}
-        />
+        >
+          <FaEdit style={{ color: "blue" }} className="App-logo" />
+        </button>
       ),
 
       delete: (
-        <BtnDanger
+        <button
           type="button"
-          title="Deletar"
           onClick={() => {
             toggleModal();
+            setDeleteRow(row);
           }}
-        />
+        >
+          <FaTrash style={{ color: "red" }} className="App-logo" />
+        </button>
       ),
     }));
 
@@ -96,25 +114,28 @@ const List = (props) => {
 
       {openModal && (
         <Modal>
-          <h1>Conteúdo do modal</h1>
-          <p>Algum texto aqui.</p>
-          <button onClick={() => props.toggleModal()}>Fechar modal</button> *
-          <div>
+          <Cabmodal>
+            <h1>Deseja excluir essa consulta ?</h1>
+          </Cabmodal>
+          <p> Alguma coisa</p>
+
+          <Rodmodal>
             <BtnInfo
               type="button"
               title="Voltar"
               onClick={() => {
                 toggleModal();
               }}
-            />{" "}
+            />
+
             <BtnDanger
               type="button"
               title="Deletar"
               onClick={() => {
-                toggleModal();
+                handleDelete();
               }}
-            />{" "}
-          </div>
+            />
+          </Rodmodal>
         </Modal>
       )}
 
@@ -129,44 +150,20 @@ const List = (props) => {
 
 export { List };
 
-const Button = styled.a`
-  display: block;
-  position: relative;
-  font-family: "Lato";
-  font-weight: 700;
-  font-size: 24px;
-  text-decoration: none;
-  text-align: center;
-  height: 50px;
-  width: 200px;
-  margin: center;
-  background: #1f58e7;
-  border: 1px solid #cacccf;
-  color: #ffffff;
-  border-radius: 100px;
-  margin-top: 25px;
-  margin-bottom: 7px;
-
-  &:hover {
-    background-color: #4e66a4;
-  }
+const Rodmodal = styled.div`
+  flex: 1;
+  flex-direction: row;
+  display: flex;
+  float: center;
+  margin: 70px;
+  border-collapse: collapse;
+  padding: 8px;
 `;
-const BtnPrimary = styled.button`
-  display: block;
-  font-family: "Lato";
-  font-weight: 700;
-  font-size: 24px;
-  text-decoration: none;
+const Cabmodal = styled.div`
+  flex: 1;
+  flex-direction: row;
+  display: flex;
+  float: center;
+  justify-content: center;
   text-align: center;
-  height: 50px;
-  background: #1f58e7;
-  border: 1px solid #cacccf;
-  color: #ffffff;
-  border-radius: 100px;
-  margin-top: 25px;
-  margin-bottom: 7px;
-
-  &:hover {
-    background-color: #4e66a4;
-  }
 `;

@@ -4,7 +4,9 @@ import styled from "styled-components";
 const Modal = (props, isOpen, children) => {
   return (
     <Wrapper>
-      <Container> {props.children} </Container>
+      <Container>
+        <Children> {props.children} </Children>
+      </Container>
     </Wrapper>
   );
 };
@@ -19,6 +21,8 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
 `;
 const Container = styled.div`
   background-color: white;
@@ -28,4 +32,11 @@ const Container = styled.div`
   width: 80%;
   max-width: 600px;
   position: relative;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Children = styled.div`
+  justify-content: center;
+  align-items: center;
 `;
