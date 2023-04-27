@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Modal = (props, isOpen, children) => {
+const Modal = (props, children) => {
   return (
     <Wrapper>
       <Container>

@@ -139,11 +139,13 @@ const List = (props) => {
         </Modal>
       )}
 
-      <BtnDefault
-        type="button"
-        title="Cadastar"
-        onClick={() => props.setSection("add")}
-      />
+      <Container>
+        <BtnDefault
+          type="button"
+          title="Cadastar"
+          onClick={() => props.setSection("add")}
+        />
+      </Container>
     </div>
   );
 };
@@ -164,6 +166,10 @@ const Cabmodal = styled.div`
   flex-direction: row;
   display: flex;
   float: center;
+  justify-content: center;
+  text-align: center;
+`;
+const Container = styled.div`
   justify-content: center;
   text-align: center;
 `;
